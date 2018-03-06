@@ -5,6 +5,7 @@ __version__ = '2.5'
 _versionDate = '2018.02.25'
 
 '''
+
 Use
   import arduino, time
   usbConnect()
@@ -111,14 +112,15 @@ def analogWrite(pin, value):
   _the_arduino_.analogWrite(pin, value)
 
 def convert(value, fromLo, fromHi, toLo, toHi):
-  '''Convert a value in the range fromLo - fromHi into a value
-     in the range toLo - toHi.
-     Returns an integer.
-
-     Example:
-       a0 = analogRead(0)
-       d3 = convert(a0, 0, 1023, 0, 255)
-       analogWrite(3, d3)
+  '''
+  Convert a value in the range fromLo - fromHi into a value
+  in the range toLo - toHi.
+  Returns an integer.
+  
+  Example:
+    a0 = analogRead(0)
+    d3 = convert(a0, 0, 1023, 0, 255)
+    analogWrite(3, d3)
   '''
   value1 = (value - fromLo) / (fromHi - fromLo)
   value2 = value1 * (toHi - toLo) + toLo
